@@ -31,7 +31,7 @@ else:
     DEBUG = True
 
 
-ALLOWED_HOSTS = [os.environ.get("ALLOWED_HOSTS"), ]
+ALLOWED_HOSTS = ["fusion-10.herokuapp.com", ]
 
 SEND_GRID_TOKEN = os.environ.get("SEND_GRID_TOKEN")
 EMAIL_TO_SEND_GRID = os.environ.get("EMAIL_TO_SEND_GRID")
