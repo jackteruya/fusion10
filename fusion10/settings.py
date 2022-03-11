@@ -25,9 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
+if os.environ.get("DEBUG") == "False":
+    DEBUG = False
+else:
+    DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
+
+ALLOWED_HOSTS = [os.environ.get("ALLOWED_HOSTS"), ]
 
 SEND_GRID_TOKEN = os.environ.get("SEND_GRID_TOKEN")
 EMAIL_TO_SEND_GRID = os.environ.get("EMAIL_TO_SEND_GRID")
