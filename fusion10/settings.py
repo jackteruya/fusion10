@@ -31,7 +31,7 @@ else:
     DEBUG = True
 
 
-ALLOWED_HOSTS = ["*", ]
+ALLOWED_HOSTS = ["fusion-10.herokuapp.com", ]
 
 SEND_GRID_TOKEN = os.environ.get("SEND_GRID_TOKEN")
 EMAIL_TO_SEND_GRID = os.environ.get("EMAIL_TO_SEND_GRID")
@@ -86,20 +86,20 @@ WSGI_APPLICATION = 'fusion10.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fusion10',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5454'
-    }
-}
-#
 # DATABASES = {
-#     'default': dj_database_url.config()
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'fusion10',
+#         'USER': 'admin',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',
+#         'PORT': '5454'
+#     }
 # }
+
+DATABASES = {
+    'default': dj_database_url.config()
+}
 
 
 
