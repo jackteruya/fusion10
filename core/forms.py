@@ -30,4 +30,5 @@ class ContatoForm(forms.Form):
 
         # API Send Grid
         mail = SendGridServic(subject=assunto, content=conteudo, email=email)
+        mail.get_data()
         mail.send_email()
